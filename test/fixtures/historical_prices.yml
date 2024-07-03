@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 9.99
+  datetime: 2024-07-02 19:19:27
+  cryptocurrency: one
+
+two:
+  price: 9.99
+  datetime: 2024-07-02 19:19:27
+  cryptocurrency: two

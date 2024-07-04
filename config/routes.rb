@@ -6,5 +6,24 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "cryptocurrencies#index"
+
+  #resource roots
+  resources :cryptocurrencies, only: [:index, :show]
+  resources :exchanges, only: [:index, :show]
+  resources :users, only: [:index, :show]
+  resources :wallets, only: [:index, :show]
+
+  # Nested routes for hierarchical navigation
+  resources :wallets do
+    resources :wallet_cryptocurrencies, only: [:index, :show]
+  end
+
+  resources :cryptocurrencies do
+    resources :cryptocurrency_exchanges, only: [:index, :show]
+  end
+
+  # About page
+  get 'about', to: 'pages#about'
+
 end

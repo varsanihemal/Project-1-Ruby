@@ -1,0 +1,12 @@
+<h1><%= @cryptocurrency.name %></h1>
+<p>Symbol: <%= @cryptocurrency.symbol %></p>
+<p>Market Cap: <%= number_to_currency(@cryptocurrency.market_cap) %></p>
+<p>Price: <%= number_to_currency(@cryptocurrency.price) %></p>
+<p>Volume (24h): <%= number_to_currency(@cryptocurrency.volume_24h) %></p>
+
+<h2>Exchanges</h2>
+<ul>
+  <% @exchanges.each do |exchange| %>
+    <li><%= link_to exchange.name, exchange_path(exchange) %></li>
+  <% end %>
+</ul>

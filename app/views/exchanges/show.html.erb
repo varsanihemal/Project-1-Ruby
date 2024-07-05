@@ -1,2 +1,26 @@
-<h1><%= @exchange.name %></h1>
-<p>Website URL: <%= link_to @exchange.website_url, @exchange.website_url %></p>
+<div class="container mt-4">
+  <h1><%= @exchange.name %></h1>
+  
+  <p class="mb-3">Website URL: <%= link_to @exchange.website_url, @exchange.website_url %></p>
+
+  <div class="card">
+    <div class="card-body">
+      <% if @exchange.name == "Coinbase" %>
+        <h5 class="card-title">Additional Information specific to Coinbase</h5>
+        <p class="card-text">
+         Coinbase is a popular cryptocurrency exchange platform headquartered in San Francisco, California. It allows users to trade various cryptocurrencies such as Bitcoin, Ethereum, and Litecoin. Coinbase provides services for both individual investors and institutions, including a wallet service and a professional trading platform called Coinbase Pro.
+        </p>
+      <% elsif @exchange.name == "Kraken" %>
+        <h5 class="card-title">Additional Information specific to Kraken</h5>
+        <p class="card-text">
+          Kraken is a US-based cryptocurrency exchange, founded in 2011. The exchange provides cryptocurrency to fiat trading, and provides price information to Bloomberg Terminal. As of 2022, Kraken was the largest Bitcoin exchange by euro volume and liquidity. Kraken is a cryptocurrency exchange based in San Francisco, founded in 2011. It supports the trading of multiple cryptocurrencies and is known for its security measures and regulatory compliance. Kraken offers trading pairs with fiat currencies like USD, EUR, and CAD, along with advanced trading options for experienced traders.
+        </p>
+      <% else %>
+        <h5 class="card-title">General Information</h5>
+        <p class="card-text">
+          Information for other exchanges or default content can go here.
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,20 @@
-<h1>Wallets</h1>
-<ul>
-  <% @wallets.each do |wallet| %>
-    <li><%= link_to wallet.name, wallet_path(wallet) %></li>
-  <% end %>
-</ul>
+<h1 class="mb-4">Wallets</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Wallet Name</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @wallets.each do |wallet| %>
+        <tr>
+          <td><%= link_to wallet.name, wallet_path(wallet), class: "text-decoration-none" %></td>
+          <td><%= link_to 'View Details', wallet_path(wallet), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

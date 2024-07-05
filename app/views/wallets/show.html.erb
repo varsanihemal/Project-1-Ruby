@@ -1,9 +1,28 @@
-<h1><%= @wallet.name %></h1>
-<p>User: <%= link_to @wallet.user.name, user_path(@wallet.user) %></p>
+<h1 class="mb-4"><%= @wallet.name %></h1>
 
-<h2>Cryptocurrencies</h2>
-<ul>
-  <% @cryptocurrencies.each do |cryptocurrency| %>
-    <li><%= link_to cryptocurrency.name, cryptocurrency_path(cryptocurrency) %></li>
-  <% end %>
-</ul>
+<div class="card mb-4">
+  <div class="card-body">
+    <p><strong>User:</strong> <%= link_to @wallet.user.name, user_path(@wallet.user), class: "text-decoration-none" %></p>
+  </div>
+</div>
+
+<h2 class="mb-4">Cryptocurrencies</h2>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Cryptocurrency Name</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cryptocurrencies.each do |cryptocurrency| %>
+        <tr>
+          <td><%= link_to cryptocurrency.name, cryptocurrency_path(cryptocurrency), class: "text-decoration-none" %></td>
+          <td><%= link_to 'View Details', cryptocurrency_path(cryptocurrency), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

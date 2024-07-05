@@ -1,6 +1,26 @@
-<h1>Cryptocurrencies</h1>
-<ul>
-  <% @cryptocurrencies.each do |cryptocurrency| %>
-    <li><%= link_to cryptocurrency.name, cryptocurrency_path(cryptocurrency) %></li>
-  <% end %>
-</ul>
+<h1 class="mb-4">Cryptocurrencies</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Market Cap</th>
+        <th>Price</th>
+        <th>Volume (24h)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cryptocurrencies.each do |cryptocurrency| %>
+        <tr>
+          <td><%= link_to cryptocurrency.name, cryptocurrency_path(cryptocurrency), class: "text-decoration-none" %></td>
+          <td><%= cryptocurrency.symbol %></td>
+          <td><%= number_to_currency(cryptocurrency.market_cap) %></td>
+          <td><%= number_to_currency(cryptocurrency.price) %></td>
+          <td><%= number_to_currency(cryptocurrency.volume_24h) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

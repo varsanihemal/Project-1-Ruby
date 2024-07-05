@@ -1,9 +1,2 @@
 <h1><%= @exchange.name %></h1>
 <p>Website URL: <%= link_to @exchange.website_url, @exchange.website_url %></p>
-
-<h2>Cryptocurrencies</h2>
-<ul>
-  <% @cryptocurrencies.each do |cryptocurrency| %>
-    <li><%= link_to cryptocurrency.name, cryptocurrency_path(cryptocurrency) %></li>
-  <% end %>
-</ul>

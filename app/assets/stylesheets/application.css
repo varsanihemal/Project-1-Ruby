@@ -97,3 +97,9 @@ body>h1 {
 .table tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+.abt-ct h1,h2, h3 {
+    color: white;
+    font-weight: 300;
+    font-style: italic;
+}

@@ -9,8 +9,8 @@
 <% end %>
 
 <% if @cryptocurrencies.present? %>
-  <div class="table-responsive">
-    <table class="table table-striped">
+  <div class="table-responsive mt-4">
+    <table id="cryptocurrencies-table" class="table table-striped">
       <thead>
         <tr>
           <th>Name</th>
@@ -35,6 +35,11 @@
       </tbody>
     </table>
   </div>
+  <script>
+    $(document).ready(function() {
+      $('#cryptocurrencies-table').DataTable();
+    });
+  </script>
 <% else %>
   <p>No cryptocurrencies found.</p>
 <% end %>

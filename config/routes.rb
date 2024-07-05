@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Home routes
   root "home#index"
   get 'about', to: 'home#about'
+  get 'search', to: 'home#search', as: 'search'
 
   # Resource routes
   resources :cryptocurrencies, only: [:index, :show] do
